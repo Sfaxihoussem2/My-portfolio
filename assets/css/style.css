@@ -15,7 +15,6 @@
     --second-color: rgb(0, 201, 255);
     --third-color: rgb(192, 166, 49);
     --first-shadow-color: rgba(0, 0, 0, 0.1);
-
 }
 
 /* ----- BASE ----- */
@@ -46,7 +45,6 @@ html{
 ::-webkit-scrollbar-thumb:hover{
     background: #bbb;
 }
-
 
 /* ---##-- REUSABLE CSS --##--- */
 
@@ -147,7 +145,6 @@ nav{
     background: var(--first-color);
     border-radius: 50%;
 }
-
 
 /* ----- WRAPPER DESIGN ----- */
 .wrapper{
@@ -378,6 +375,7 @@ h3{
     border-radius: 20px;
     box-shadow: 1px 8px 10px 2px var(--first-shadow-color);
     overflow: hidden;
+    cursor: pointer; /* Add this line */
 }
 .project-box>i{
     font-size: 50px;
@@ -397,6 +395,7 @@ h3{
     height: 100%;
     transition: .4s;
     z-index: 1;
+    pointer-events: none; /* Add this line */
 }
 .project-box:hover.project-box::after,
 .contact-info:hover.contact-info::after{
@@ -529,7 +528,6 @@ footer{
     margin-top: 10px;
 }
 
-
 /* ----- MEDIA QUERY == 1024px / RESPONSIVE ----- */
 @media only screen and (max-width: 1024px){
     .featured-text{
@@ -617,11 +615,9 @@ footer{
     .project-box{
         width: 80%;
     }
-
 }
 
 /* ----- MEDIA QUERY == 540px / RESPONSIVE ----- */
-
 @media only screen and (max-width: 540px){
     .featured-name{
         font-size: 40px;

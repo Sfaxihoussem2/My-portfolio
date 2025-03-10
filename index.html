@@ -66,8 +66,11 @@
                 <p>Embedded systems and IoT Developer passionate about embedded software development and technological innovation.</p>
             </div>
             <div class="featured-text-btn">
-                <button class="btn blue-btn">Hire Me</button>
-                <button class="btn">Download CV <i class="uil uil-file-alt"></i></button>
+                <!-- Option 1: Scroll to Contact Section -->
+                <button class="btn blue-btn" onclick="scrollToContact()">Hire Me</button>
+                <!-- Option 2: Open Email Client -->
+                <!-- <button class="btn blue-btn" onclick="openEmailClient()">Hire Me</button> -->
+            <button class="btn" onclick="window.location.href='assets/files/CV.pdf'">Download CV <i class="uil uil-file-alt"></i></button>
             </div>
             <div class="social_icons">
                 <div class="icon"><a href="https://www.instagram.com/houssem_sf/"><i class="uil uil-instagram"></i></a></div>
@@ -146,47 +149,37 @@
           </div>
        </section>
 
-<section class="section" id="projects">
-    <div class="top-header">
-        <h1>Projects</h1>
-    </div>
-    <div class="project-container">
-        <!-- Sea Drone Project -->
-        <div class="project-box">
-            <i class="uil uil-ship"></i> <!-- Sea Drone Icon -->
-            <h3>Sea Drone Project</h3>
-            <label>Autonomous marine drone for navigation and surveillance</label>
-            <button class="btn" onclick="window.location.href='https://github.com/Sfaxihoussem2/Sea-drone-'">View Project</button>
-        </div>
+       <!-- -------------- PROJECTS BOX ---------------- -->
+       <section class="section" id="projects">
+          <div class="top-header">
+            <h1>Projects</h1>
+          </div>
+          <div class="project-container">
+            <!-- Sea Drone Project -->
+            <div class="project-box" onclick="openProjectLink('https://github.com/Sfaxihoussem2/Sea-drone-')">
+                <i class="uil uil-ship"></i>
+                <h3>Sea Drone Project</h3>
+                <label>Autonomous marine drone for navigation and surveillance</label>
+                <button class="btn">View Project</button>
+            </div>
 
-        <!-- Smart Glasses Project -->
-        <div class="project-box">
-            <i class="uil uil-eye"></i> <!-- Eye Icon for Smart Glasses -->
-            <h3>Smart Glasses</h3>
-            <label>Smart glasses for blind persons with environment navigation</label>
-            <button class="btn" onclick="window.location.href='https://github.com/Sfaxihoussem2/smart-glasses-for-blind-person-'">View Project</button>
-        </div>
+            <!-- Smart Glasses Project -->
+            <div class="project-box" onclick="openProjectLink('https://github.com/Sfaxihoussem2/smart-glasses-for-blind-person-')">
+                <i class="uil uil-eye"></i>
+                <h3>Smart Glasses</h3>
+                <label>Smart glasses for blind persons with environment navigation</label>
+                <button class="btn">View Project</button>
+            </div>
 
-        <!-- IoT Smart Lock Project -->
-        <div class="project-box">
-            <i class="uil uil-lock"></i> <!-- IoT Smart Lock Icon -->
-            <h3>IoT Smart Lock</h3>
-            <label>IoT-based smart lock with environmental monitoring</label>
-            <button class="btn" onclick="window.location.href='https://github.com/Sfaxihoussem2/Pointing-use-RFID-card-with-Esp32'">View Project</button>
-        </div>
-    </div>
-</section>
-
-
-<!-- JavaScript to open the link -->
-<script>
-    function openProjectLink(url) {
-        window.open(url, '_blank');  // Open in a new tab
-    }
-</script>
-
-
-
+            <!-- IoT Smart Lock Project -->
+            <div class="project-box" onclick="openProjectLink('https://github.com/Sfaxihoussem2/Pointing-use-RFID-card-with-Esp32')">
+                <i class="uil uil-lock"></i>
+                <h3>IoT Smart Lock</h3>
+                <label>IoT-based smart lock with environmental monitoring</label>
+                <button class="btn">View Project</button>
+            </div>
+          </div>
+       </section>
 
        <!-- -------------- CONTACT BOX ---------------- -->
        <section class="section" id="contact">
@@ -203,18 +196,21 @@
                 </div>
              </div>
              <div class="col">
-                <div class="form-control">
+                <form id="contactForm" class="form-control">
                     <div class="form-inputs">
-                        <input type="text" class="input-field" placeholder="Name">
-                        <input type="text" class="input-field" placeholder="Email">
+                        <input type="text" id="name" class="input-field" placeholder="Name" required>
+                        <input type="email" id="email" class="input-field" placeholder="Email" required>
                     </div>
                     <div class="text-area">
-                        <textarea placeholder="Message"></textarea>
+                        <textarea id="message" placeholder="Message" required></textarea>
+                    </div>
+                    <div id="successMessage" style="display: none; color: green; margin-top: 10px;">
+                        Message sent successfully! ✅
                     </div>
                     <div class="form-button">
-                        <button class="btn">Send <i class="uil uil-message"></i></button>
+                        <button type="submit" class="btn">Send <i class="uil uil-message"></i></button>
                     </div>
-                </div>
+                </form>
              </div>
           </div>
        </section>

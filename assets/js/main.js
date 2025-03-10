@@ -98,3 +98,53 @@ function scrollActive() {
 }
 
 window.addEventListener('scroll', scrollActive)
+
+/* ----- OPEN PROJECT LINK ----- */
+function openProjectLink(url) {
+    window.open(url, '_blank');  // Open in a new tab
+}
+
+/* ----- SCROLL TO CONTACT SECTION ----- */
+function scrollToContact() {
+    const contactSection = document.getElementById('contact');
+    contactSection.scrollIntoView({ behavior: 'smooth' });
+}
+
+/* ----- OPEN EMAIL CLIENT ----- */
+function openEmailClient() {
+    const email = 'houssemsfaxi2.com'; // Replace with your email
+    const subject = 'Hire Inquiry from Portfolio';
+    const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+    window.location.href = mailtoLink;
+}
+
+/* ----- CONTACT FORM SUBMISSION ----- */
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the form from submitting the traditional way
+
+    // Get form values
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+
+    // Validate form fields
+    if (!name || !email || !message) {
+        alert('Please fill out all fields.');
+        return;
+    }
+
+    // Simulate form submission (you can replace this with an actual API call)
+    console.log('Form submitted:', { name, email, message });
+
+    // Display success message
+    const successMessage = document.getElementById('successMessage');
+    successMessage.style.display = 'block';
+
+    // Clear the form
+    document.getElementById('contactForm').reset();
+
+    // Hide the success message after 3 seconds
+    setTimeout(() => {
+        successMessage.style.display = 'none';
+    }, 3000);
+});
